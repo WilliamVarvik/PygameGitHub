@@ -29,8 +29,12 @@ class Ball:
     if pg.mouse.get_pressed()[0]:
        
       pos = pg.mouse.get_pos()
-      self.x = pos[0]
-      self.y = pos[1]
+      x = self.x = pos[0]
+      y = self.y = pos[1]
+
+      l = m.sqrt(x**2 + y**2)
+      self.x += x/l * self.fart
+      self.y += y/l * self.fart
   
 # Lager et Ball-objekt
 ball = Ball(200, 200, 0.1, 20, (255, 69, 0), vindu)
