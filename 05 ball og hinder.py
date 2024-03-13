@@ -10,6 +10,16 @@ VINDU_BREDDE = 500
 VINDU_HOYDE  = 500
 vindu = pg.display.set_mode([VINDU_BREDDE, VINDU_HOYDE])
 
+class Spill():
+
+  def __init__(self) -> None:
+    pass
+  
+  self.spiller = Spiller(200, 200, 20, (255, 69, 0), vindu, 0.1)
+# Lager et Hinder-objekt
+  self.hinder = Hinder(150, 250, 20, (0, 0, 255), vindu, 0.08, 0.12)
+
+
 class Ball:
   """Klasse for å representere en ball"""
   def __init__(self, x, y, radius, farge, vindusobjekt):
@@ -77,11 +87,9 @@ class Spiller(Ball):
       self.x += self.fart
 
 # Lager et Spiller-objekt
-spiller = Spiller(200, 200, 20, (255, 69, 0), vindu, 0.1)
-# Lager et Hinder-objekt
-hinder = Hinder(150, 250, 20, (0, 0, 255), vindu, 0.08, 0.12)
 
 # Gjenta helt til brukeren lukker vinduet
+spill = Spill()
 fortsett = True
 while fortsett:
 
